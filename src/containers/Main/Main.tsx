@@ -1,14 +1,16 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { TaskList } from "../../components/TaskList/TaskList";
 import { Task } from "../../types/task";
 import { InputBar } from "../../components/InputBar/InputBar";
 import "./Main.scss";
+import { Filter } from "../../components/Filter/Filter";
 
 export const Main = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [taskInput, setTaskInput] = useState("");
   const [selectedPriority, setSelectedPriority] = useState("High");
+  const [filterPriorityAsc, setFilterPriorityAsc] = useState(true);
   const [numberOfTasksAdded, setNumberOfTasksAdded] = useState(0); // Used as a id and key for each task item component created
 
   const handleTaskInput = (event: ChangeEvent<HTMLInputElement>) => {
@@ -38,6 +40,12 @@ export const Main = () => {
     }
   };
 
+  const handlePriorityFilterChange = (
+    event: ChangeEvent<HTMLSelectElement>
+  ) => {
+    const value: string = event.currentTarget.value;
+    setFilterPriorityAsc(value === "asc");
+  };
 
   const deleteTask = (taskId: number) => {
     const newTasks: Task[] = tasks.filter((task) => {
@@ -50,6 +58,29 @@ export const Main = () => {
     setTasks([]);
   };
 
+  const sortPriority = (): Task[] => {
+    const highTasks = tasks.filter((task) => {
+      return task.priority.toLowerCase() == "high";
+    });
+    const mediumTasks = tasks.filter((task) => {
+      return task.priority.toLowerCase() == "medium";
+    });
+    const lowTasks = tasks.filter((task) => {
+      return task.priority.toLowerCase() == "low";
+    });
+
+    if (filterPriorityAsc) return [...highTasks, ...mediumTasks, ...lowTasks];
+    else return [...lowTasks, ...mediumTasks, ...highTasks];
+  };
+
+  const filterTasks = () => {
+    setTasks(sortPriority());
+  };
+
+  useEffect(() => {
+    filterTasks();
+  }, [tasks, filterPriorityAsc]);
+
   return (
     <main className="task-webpage">
       <Header onClick={handleReset} />
@@ -59,6 +90,7 @@ export const Main = () => {
         onSelectChange={handlePriorityChange}
         taskValue={taskInput}
       />
+      <Filter onFilterPriorityChange={handlePriorityFilterChange} />
       {tasks.length > 0 ? (
         <TaskList tasks={tasks} onDelete={deleteTask} />
       ) : (

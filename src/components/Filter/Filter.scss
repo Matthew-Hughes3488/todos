@@ -1,0 +1,10 @@
+@use "../../Variables.scss" as *;
+
+.dropdown-menu{
+    margin: 10px;
+    border-radius: 10px;
+    padding: 1px;
+    border-color: $color-light-blue;
+    background-color: $color-dark-blue;
+    outline: none;
+}
