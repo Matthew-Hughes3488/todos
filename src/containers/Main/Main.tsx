@@ -31,9 +31,13 @@ export const Main = () => {
     setTasks(newTasks);
   }
 
+  const handleReset = () =>{
+    setTasks([]);
+  }
+
   return (
     <main>
-      <Header />
+      <Header onClick={handleReset}/>
       <InputBar onSubmit={handleNewTask} onChange={handleTaskInput}/>
       {tasks.length > 0 ? (
         <TaskList tasks={tasks} onDelete={deleteTask}/>
