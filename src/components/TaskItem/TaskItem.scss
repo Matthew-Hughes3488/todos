@@ -1,9 +1,11 @@
+@use "../../Variables.scss" as *;
+
 .task-card{
     display: flex;
     align-items: center;
     margin: 15px;
     padding: 5px;
-    border: 2px solid black;
+    border: 2px solid $color-light-blue;;
     border-radius: 5px;
 
     .completed{
@@ -22,5 +24,14 @@
     &__bin{
         padding: 4px 10px;
         margin-left: auto;
+        outline: none;
+        border: none;
+        background-color:$color-dark-blue;
+        transition: transform 0.3s ease;
+
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.2);
+        }
     }
 }

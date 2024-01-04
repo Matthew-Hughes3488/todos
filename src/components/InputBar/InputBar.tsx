@@ -10,9 +10,9 @@ type InputBarProps = {
 export const InputBar = ({ onSubmit, onChange, taskValue }: InputBarProps) => {
   return (
     <section className="form-card">
-      <form action="" onSubmit={onSubmit}>
+      <form className="form-card__input-form" action="" onSubmit={onSubmit}>
         <input
-        className="form-card__input-bar"
+        className="form-card__input-form--input-bar"
           type="text"
           name="new-task"
           id="new-task"
@@ -20,7 +20,7 @@ export const InputBar = ({ onSubmit, onChange, taskValue }: InputBarProps) => {
           value={taskValue}
           onChange={onChange}
         />
-        <button className="form-card__submit" type="submit">Submit</button>
+        <button className="form-card__input-form--submit" type="submit">+</button>
       </form>
     </section>
   );

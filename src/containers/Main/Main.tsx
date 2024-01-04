@@ -3,6 +3,7 @@ import { Header } from "../../components/Header/Header";
 import { TaskList } from "../../components/TaskList/TaskList";
 import { Task } from "../../types/task";
 import { InputBar } from "../../components/InputBar/InputBar";
+import "./Main.scss";
 
 export const Main = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -36,13 +37,13 @@ export const Main = () => {
   }
 
   return (
-    <main>
+    <main className="task-webpage">
       <Header onClick={handleReset}/>
       <InputBar onSubmit={handleNewTask} onChange={handleTaskInput} taskValue={taskInput}/>
       {tasks.length > 0 ? (
         <TaskList tasks={tasks} onDelete={deleteTask}/>
       ) : (
-        <p>Add tasks here 👆</p>
+        <p className="task-webpage__text">Add tasks here 👆</p>
       )}
     </main>
   );

@@ -1,12 +1,36 @@
-.form-card{
-    margin: 10px;
+@use "../../Variables.scss" as *;
 
-    &__input-bar{
-        margin-right: 20px;
-        border-color: black;
+.form-card {
+  margin: 10px;
+  border: 2px solid $color-light-blue;
+  border-radius: 10px;
+  width: fit-content;
+
+  &__input-form {
+    display: flex;
+    align-items: center;
+
+    &--input-bar {
+      margin-right: 20px;
+      border: unset;
+      padding: 3px;
+      background-color: $color-dark-blue;
+      outline: none;
     }
 
-    &__submit{
-        padding: 5px 10px;
+    &--submit {
+      font-size: 2rem;
+      margin: 5px;
+      border: none;
+      outline: none;
+      background-color: $color-dark-blue;
+      transition: transform 0.3s ease;
+
+      &:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+
+      }
     }
+  }
 }

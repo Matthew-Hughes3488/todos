@@ -1,0 +1,10 @@
+@use "../../Variables.scss" as *;
+
+.task-webpage{
+    height: 100vh;
+    background-color: $color-dark-blue;
+
+    &__text{
+        margin: 15px;
+    }
+}

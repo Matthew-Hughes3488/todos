@@ -1,7 +1,10 @@
+@use "../../Variables.scss" as *;
+
 .header-container{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: $color-blue;
     &__title{
         margin: 10px;
     }
