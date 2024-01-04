@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { TaskList } from "../../components/TaskList/TaskList";
 import { taskData } from "../../data/taskData";
@@ -27,7 +27,7 @@ export const Main = () => {
       <Header />
       <InputBar onSubmit={handleNewTask} onChange={handleTaskInput}/>
       {taskData.length > 0 ? (
-        <TaskList tasks={taskData} />
+        <TaskList tasks={tasks} />
       ) : (
         <p>Add tasks here 👆</p>
       )}
