@@ -1,4 +1,5 @@
 import { ChangeEventHandler, FormEventHandler } from "react";
+import "./InputBar.scss"
 
 type InputBarProps = {
   onSubmit: FormEventHandler<HTMLFormElement>;
