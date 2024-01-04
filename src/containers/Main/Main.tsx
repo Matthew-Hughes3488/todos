@@ -10,7 +10,6 @@ export const Main = () => {
         {taskData.length > 0 ? <TaskList tasks={taskData}/> : <p>Add tasks here 👆</p>}
         {
             //inputBar
-            
             //Show message if task list is empty instead
         }
     </main>
