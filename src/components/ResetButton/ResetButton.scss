@@ -7,5 +7,10 @@
     padding: 5px;
     border-radius: 10px;
     background-color: $color-dark-blue;
-    color: $color-white;
+    transition: transform 0.3s ease;
+
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+    }
 }
