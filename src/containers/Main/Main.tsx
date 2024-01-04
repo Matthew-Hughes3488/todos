@@ -3,6 +3,7 @@ import { Header } from "../../components/Header/Header";
 import { TaskList } from "../../components/TaskList/TaskList";
 import { Task } from "../../types/task";
 import { InputBar } from "../../components/InputBar/InputBar";
+import "./Main.scss";
 
 export const Main = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
