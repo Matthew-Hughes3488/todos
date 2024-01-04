@@ -19,7 +19,11 @@ export const Main = () => {
     event.preventDefault();
 
     if (taskInput) {
-      const newTask: Task = { id: numberOfTasksAdded, task: taskInput };
+      const newTask: Task = {
+        id: numberOfTasksAdded,
+        task: taskInput,
+        dateCreated: new Date(),
+      };
       setNumberOfTasksAdded(numberOfTasksAdded + 1);
 
       setTasks((prevTasks) => [...prevTasks, newTask]);

@@ -1,5 +1,5 @@
 import { ChangeEventHandler, FormEventHandler } from "react";
-import "./InputBar.scss"
+import "./InputBar.scss";
 
 type InputBarProps = {
   onSubmit: FormEventHandler<HTMLFormElement>;
@@ -12,7 +12,7 @@ export const InputBar = ({ onSubmit, onChange, taskValue }: InputBarProps) => {
     <section className="form-card">
       <form className="form-card__input-form" action="" onSubmit={onSubmit}>
         <input
-        className="form-card__input-form--input-bar"
+          className="form-card__input-form--input-bar"
           type="text"
           name="new-task"
           id="new-task"
@@ -20,7 +20,9 @@ export const InputBar = ({ onSubmit, onChange, taskValue }: InputBarProps) => {
           value={taskValue}
           onChange={onChange}
         />
-        <button className="form-card__input-form--submit" type="submit">+</button>
+        <button className="form-card__input-form--submit" type="submit">
+          +
+        </button>
       </form>
     </section>
   );
