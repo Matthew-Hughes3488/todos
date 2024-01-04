@@ -1,4 +1,5 @@
 import { ChangeEventHandler } from "react";
+import "./Filter.scss"
 
 type FilterProps = {
     onFilterPriorityChange: ChangeEventHandler<HTMLSelectElement>;
@@ -6,7 +7,7 @@ type FilterProps = {
 export const Filter = ({onFilterPriorityChange} : FilterProps) => {
   return (
     <div>
-        <select name="priority" id="" onChange={onFilterPriorityChange}>
+        <select className="dropdown-menu" name="priority" id="" onChange={onFilterPriorityChange}>
             <option value="asc">Asc</option>
             <option value="desc">Desc</option>
         </select>
