@@ -3,10 +3,12 @@
 .task-card{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     margin: 15px;
     padding: 5px;
     border: 2px solid $color-light-blue;;
     border-radius: 5px;
+    width: fit-content;
 
     .completed{
         text-decoration:line-through;
@@ -19,6 +21,10 @@
 
     &__task{
         margin: 5px;
+    }
+
+    &__date{
+        font-size: 0.8rem;
     }
 
     &__bin{
