@@ -1,43 +1,49 @@
 @use "../../Variables.scss" as *;
 
-.task-card{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 15px;
-    padding: 5px;
-    border: 2px solid $color-light-blue;;
-    border-radius: 5px;
-    width: fit-content;
+.task-card {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr;
+  align-items: center;
+  margin: 15px;
+  padding: 5px;
+  border: 2px solid $color-light-blue;
+  border-radius: 5px;
 
-    .completed{
-        text-decoration:line-through;
-        color: gray;
+  .completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+
+  &__checkbox {
+    margin: 5px;
+  }
+
+  &__task {
+    margin-right: auto;
+    margin: 5px;
+  }
+
+  &__date {
+    font-size: 0.8rem;
+    grid-column: 1/4;
+  }
+
+  &__priority {
+    font-size: 0.8rem;
+    grid-column: 1/4;
+  }
+
+  &__bin {
+    padding: 4px 10px;
+    margin-left: auto;
+    outline: none;
+    border: none;
+    background-color: unset;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
     }
-
-    &__checkbox{
-        margin: 5px;
-    }
-
-    &__task{
-        margin: 5px;
-    }
-
-    &__date{
-        font-size: 0.8rem;
-    }
-
-    &__bin{
-        padding: 4px 10px;
-        margin-left: auto;
-        outline: none;
-        border: none;
-        background-color:$color-dark-blue;
-        transition: transform 0.3s ease;
-
-        &:hover{
-            cursor: pointer;
-            transform: scale(1.2);
-        }
-    }
+  }
 }

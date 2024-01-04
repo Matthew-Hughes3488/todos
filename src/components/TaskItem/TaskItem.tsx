@@ -31,6 +31,7 @@ export const TaskItem = ({ task, onDelete }: TaskItemProps) => {
       <button className="task-card__bin" onClick={handleBin}>
         Bin
       </button>
+      <p className="task-card__priority">{`Priority: ${task.priority}`}</p>
       <p className="task-card__date">Created: {task.dateCreated.toLocaleString()}</p>
     </section>
   );
