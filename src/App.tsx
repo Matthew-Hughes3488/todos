@@ -1,11 +1,12 @@
-import { useState } from 'react'
+
+import { Main } from './containers/Main/Main'
 
 function App() {
 
 
   return (
     <>
-
+    <Main/>
     </>
   )
 }
