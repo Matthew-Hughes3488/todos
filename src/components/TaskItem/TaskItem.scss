@@ -6,6 +6,11 @@
     border: 2px solid black;
     border-radius: 5px;
 
+    .completed{
+        text-decoration:line-through;
+        color: gray;
+    }
+
     &__checkbox{
         margin: 5px;
     }

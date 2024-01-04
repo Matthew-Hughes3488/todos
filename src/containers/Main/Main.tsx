@@ -17,7 +17,7 @@ export const Main = () => {
   const handleNewTask = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const newTask: Task = { id: numberOfTasksAdded, task: taskInput, completed: false };
+    const newTask: Task = { id: numberOfTasksAdded, task: taskInput};
     setNumberOfTasksAdded(numberOfTasksAdded + 1);
     
     setTasks((prevTasks) => [...prevTasks, newTask]);
