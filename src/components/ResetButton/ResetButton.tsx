@@ -1,9 +1,9 @@
-
+import "./ResetButton.scss"
 
 export const ResetButton = () => {
   return (
     <div className="button-container">
-        <button className="button-container__button">Reset</button>
+        <button className="reset-button">Reset</button>
     </div>
   )
 }
