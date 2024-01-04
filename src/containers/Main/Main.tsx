@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { TaskList } from "../../components/TaskList/TaskList";
 import { Task } from "../../types/task";
