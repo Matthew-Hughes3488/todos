@@ -22,9 +22,9 @@ export const InputBar = ({ onSubmit, onInputChange, onSelectChange,  taskValue }
           onChange={onInputChange}
         />
         <select className="form-card__input-form--dropdown" name="priority" id="priority" onChange={onSelectChange}>
-          <option value="high">High</option>
-          <option value="medium">Medium</option>
-          <option value="low">Low</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
         </select>
         <button className="form-card__input-form--submit" type="submit">
           +
