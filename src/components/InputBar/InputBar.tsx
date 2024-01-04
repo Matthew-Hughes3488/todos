@@ -1,10 +1,11 @@
-import { FormEventHandler } from "react";
+import { ChangeEventHandler, FormEventHandler } from "react";
 
 type InputBarProps = {
   onSubmit: FormEventHandler<HTMLFormElement>;
+  onChange: ChangeEventHandler<HTMLInputElement>;
 };
 
-export const InputBar = ({ onSubmit }: InputBarProps) => {
+export const InputBar = ({ onSubmit, onChange }: InputBarProps) => {
   return (
     <section className="form-card">
       <form action="" onSubmit={onSubmit}>
@@ -14,6 +15,7 @@ export const InputBar = ({ onSubmit }: InputBarProps) => {
           name="new-task"
           id="new-task"
           placeholder="Enter new task here..."
+          onChange={onChange}
         />
         <button className="form-card__submit" type="submit">Submit</button>
       </form>
