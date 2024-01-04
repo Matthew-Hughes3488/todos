@@ -1,4 +1,5 @@
 import { ResetButton } from "../ResetButton/ResetButton"
+import "./Header.scss"
 
 
 export const Header = () => {

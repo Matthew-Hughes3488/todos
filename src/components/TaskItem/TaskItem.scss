@@ -1,0 +1,21 @@
+.task-card{
+    display: flex;
+    align-items: center;
+    margin: 15px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+
+    &__checkbox{
+        margin: 5px;
+    }
+
+    &__task{
+        margin: 5px;
+    }
+
+    &__bin{
+        padding: 4px 10px;
+        margin-left: auto;
+    }
+}
