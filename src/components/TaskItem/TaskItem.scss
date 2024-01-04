@@ -1,14 +1,14 @@
 @use "../../Variables.scss" as *;
 
 .task-card{
-    display: flex;
+    display: grid;
+    grid-template-columns: 40px 1fr 1fr;
     align-items: center;
-    flex-wrap: wrap;
     margin: 15px;
     padding: 5px;
     border: 2px solid $color-light-blue;;
     border-radius: 5px;
-    width: fit-content;
+    
 
     .completed{
         text-decoration:line-through;
@@ -20,11 +20,13 @@
     }
 
     &__task{
+        margin-right: auto;
         margin: 5px;
     }
 
     &__date{
         font-size: 0.8rem;
+        grid-column: 1/4;
     }
 
     &__bin{
@@ -32,7 +34,7 @@
         margin-left: auto;
         outline: none;
         border: none;
-        background-color:$color-dark-blue;
+        background-color: unset;
         transition: transform 0.3s ease;
 
         &:hover{

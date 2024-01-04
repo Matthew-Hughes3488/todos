@@ -8,11 +8,17 @@ import "./Main.scss";
 export const Main = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [taskInput, setTaskInput] = useState("");
-  const [numberOfTasksAdded, setNumberOfTasksAdded] = useState(0);
+  const [selectedPriority, setSelectedPriority] = useState("High");
+  const [numberOfTasksAdded, setNumberOfTasksAdded] = useState(0); // Used as a id and key for each task item component created
 
   const handleTaskInput = (event: ChangeEvent<HTMLInputElement>) => {
     const value: string = event.currentTarget.value;
     setTaskInput(value);
+  };
+
+  const handlePriorityChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    const value: string = event.currentTarget.value;
+    setSelectedPriority(value);
   };
 
   const handleNewTask = (event: FormEvent<HTMLFormElement>) => {
@@ -22,6 +28,7 @@ export const Main = () => {
       const newTask: Task = {
         id: numberOfTasksAdded,
         task: taskInput,
+        priority: selectedPriority,
         dateCreated: new Date(),
       };
       setNumberOfTasksAdded(numberOfTasksAdded + 1);
@@ -30,6 +37,7 @@ export const Main = () => {
       setTaskInput("");
     }
   };
+
 
   const deleteTask = (taskId: number) => {
     const newTasks: Task[] = tasks.filter((task) => {
@@ -47,7 +55,8 @@ export const Main = () => {
       <Header onClick={handleReset} />
       <InputBar
         onSubmit={handleNewTask}
-        onChange={handleTaskInput}
+        onInputChange={handleTaskInput}
+        onSelectChange={handlePriorityChange}
         taskValue={taskInput}
       />
       {tasks.length > 0 ? (

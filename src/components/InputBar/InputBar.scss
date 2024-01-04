@@ -1,16 +1,20 @@
 @use "../../Variables.scss" as *;
 
 .form-card {
-  margin: 10px;
+  margin: 10px auto;
   border: 2px solid $color-light-blue;
   border-radius: 10px;
   width: fit-content;
+  
 
   &__input-form {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     align-items: center;
 
     &--input-bar {
+      margin: 10px;
       margin-right: 20px;
       border: unset;
       padding: 3px;
@@ -18,9 +22,20 @@
       outline: none;
     }
 
+    &--dropdown{
+      margin: 10px;
+      border-radius: 10px;
+      padding: 1px;
+      border-color: $color-light-blue;
+      background-color: $color-dark-blue;
+      outline: none;
+    }
+
     &--submit {
+      grid-area: 1/2/3/3;
       font-size: 2rem;
       margin: 5px;
+      margin-left: auto;
       border: none;
       outline: none;
       background-color: $color-dark-blue;
