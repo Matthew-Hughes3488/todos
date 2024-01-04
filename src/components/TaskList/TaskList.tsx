@@ -10,7 +10,7 @@ export const TaskList = ({tasks, onDelete} : TaskListProps) => {
   return (
     <section className='task-list-container'>
         {tasks.map(task =>{
-            return <TaskItem task={task} onDelete={onDelete}/>
+            return <TaskItem key={task.id} task={task} onDelete={onDelete}/>
         })}
     </section>
   )
