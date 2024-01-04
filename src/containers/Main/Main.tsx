@@ -38,16 +38,12 @@ export const Main = () => {
   return (
     <main>
       <Header onClick={handleReset}/>
-      <InputBar onSubmit={handleNewTask} onChange={handleTaskInput}/>
+      <InputBar onSubmit={handleNewTask} onChange={handleTaskInput} taskValue={taskInput}/>
       {tasks.length > 0 ? (
         <TaskList tasks={tasks} onDelete={deleteTask}/>
       ) : (
         <p>Add tasks here 👆</p>
       )}
-      {
-        //inputBar
-        //Show message if task list is empty instead
-      }
     </main>
   );
 };

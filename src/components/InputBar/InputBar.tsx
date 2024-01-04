@@ -4,9 +4,10 @@ import "./InputBar.scss"
 type InputBarProps = {
   onSubmit: FormEventHandler<HTMLFormElement>;
   onChange: ChangeEventHandler<HTMLInputElement>;
+  taskValue: string;
 };
 
-export const InputBar = ({ onSubmit, onChange }: InputBarProps) => {
+export const InputBar = ({ onSubmit, onChange, taskValue }: InputBarProps) => {
   return (
     <section className="form-card">
       <form action="" onSubmit={onSubmit}>
@@ -16,6 +17,7 @@ export const InputBar = ({ onSubmit, onChange }: InputBarProps) => {
           name="new-task"
           id="new-task"
           placeholder="Enter new task here..."
+          value={taskValue}
           onChange={onChange}
         />
         <button className="form-card__submit" type="submit">Submit</button>
